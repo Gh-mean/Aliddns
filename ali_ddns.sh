@@ -328,6 +328,7 @@ ipv6()
 	# Leave it blank if using the default DNS Server
 	DNSServer="240c::6666"
 	#Update Domain Name Binding Interface
+	#所需获取ipv6地址的端口
 	dev="eth0"
 	#describe_record
 	update_record
@@ -356,6 +357,7 @@ while getopts '46a' opt; do
 	exit
         ;;
     ? )
+    	echo "ipv6地址通过本地端口获取ip地址，如需在路由器执行务必修改端口为上网端口"
 	echo "-4	更新ipv4解析"
 	echo "-6	更新ipv6解析"
 	echo "-a	更新ipv4和ipv6解析"
